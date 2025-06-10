@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from Quantize import *
 
 app = Flask(__name__)
 
@@ -15,5 +16,3 @@ def set_work():
 if __name__ == '__main__':
     app.run(debug=True)
 
-from Quantize import *
-Quantize = Quantize()

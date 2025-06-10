@@ -1,9 +1,3 @@
-maxRange =  input("Input a maximum range: ")
-minRange =  input("Input a minimum range: ")
-sampleRate =  input("Input a sample rate: ")
-bitRate =  input("Input a bit rate: ")
-analogVoltage =  input("Input an analog voltage: ")
-
 def Quantize(maxRange, minRange, sampleRate, bitRate, analogVoltage):
     maxRange = float(maxRange)
     minRange = float(minRange)

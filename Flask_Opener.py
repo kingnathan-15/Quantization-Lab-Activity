@@ -9,14 +9,14 @@ def home():
 
 @app.route('/quantize', methods=['POST'])
 def set_work():
-    maxRate = request.form.get('maxRate')
-    minRate = request.form.get('minRate')
+    maxRate = request.form.get('maxRange')
+    minRate = request.form.get('minRange')
     sampleRate = request.form.get('sampleRate')
     bitRate = request.form.get('bitRate')
     analogVoltage = request.form.get('analogVoltage')  
     quantizedValue = Quantize(maxRate, minRate, sampleRate, bitRate, analogVoltage)
     greeting = f"Quantized Value: {quantizedValue}"
-    return render_template('index.html', greeting=greeting)
+    return render_template('Interface.html', greeting=greeting)
 
 if __name__ == '__main__':
     app.run(debug=True)

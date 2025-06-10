@@ -3,21 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interface Example</title>
+        <title>Quantization Interface</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
     </head>
     <body>
-        <form id="interfaceForm">
+        <form id="interfaceForm" action="/quantize" method="POST">
+            <h1>Quantization Interface</h1>
             <h2>Range</h2>
             <label for="maxRange">Maximum Range:</label>
             <input type="text" id="maxRange" name="maxRange" required>
             <label for="minRange">Minimum Range:</label>
             <input type="text" id="minRange" name="minRange" required>
+            <h2>Rates</h2>
             <label for="Sample Rate">Sample Rate:</label>
             <input type="text" id="sampleRate" name="sampleRate" required>
             <label for="BitRate">BitRate:</label>
             <input type="text" id="bitRate" name="bitRate" required>
+            <h2>Analog Voltage</h2>
             <label for="Analog Voltage">Analog Voltage:</label>
+            <input type="text" id="analogVoltage" name="analogVoltage" required>
             <button type="submit">Submit</button>
+        </form>
     </body>

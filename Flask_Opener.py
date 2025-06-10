@@ -5,12 +5,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('Interface.html')
 
-@app.route('/greet', methods=['POST'])
+@app.route('/quantize', methods=['POST'])
 def set_work():
-    name = request.form.get('name', 'Guest')
-    greeting = f"Hello, {name}!"
+    maxRate = request.form.get('maxRate')
+    minRate = request.form.get('minRate')
+    sampleRate = request.form.get('sampleRate')
+    bitRate = request.form.get('bitRate')
+    analogVoltage = request.form.get('analogVoltage')  
+    quantizedValue = Quantize(maxRate, minRate, sampleRate, bitRate, analogVoltage)
+    greeting = f"Quantized Value: {quantizedValue}"
     return render_template('index.html', greeting=greeting)
 
 if __name__ == '__main__':

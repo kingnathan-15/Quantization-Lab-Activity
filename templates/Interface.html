@@ -19,11 +19,11 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label for="maxRange">Maximum Range</label>
-                        <input type="text" id="maxRange" name="maxRange" placeholder="Enter max value" required>
+                        <input type="number" id="maxRange" name="maxRange" placeholder="Enter max value" required>
                     </div>
                     <div class="input-group">
                         <label for="minRange">Minimum Range</label>
-                        <input type="text" id="minRange" name="minRange" placeholder="Enter min value" required>
+                        <input type="number" id="minRange" name="minRange" placeholder="Enter min value" required>
                     </div>
                 </div>
             </div>
@@ -36,11 +36,11 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label for="sampleRate">Sample Rate (Hz)</label>
-                        <input type="text" id="sampleRate" name="sampleRate" placeholder="e.g., 44100" required>
+                        <input type="number" id="sampleRate" name="sampleRate" placeholder="e.g., 44100" required>
                     </div>
                     <div class="input-group">
                         <label for="bitRate">Bit Rate</label>
-                        <input type="text" id="bitRate" name="bitRate" placeholder="e.g., 16-bit" required>
+                        <input type="number" id="bitRate" name="bitRate" placeholder="e.g., 16-bit" required>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 </h2>
                 <div class="input-group">
                     <label for="analogVoltage">Analog Voltage (V)</label>
-                    <input type="text" id="analogVoltage" name="analogVoltage" placeholder="Enter voltage value" required>
+                    <input type="number" id="analogVoltage" name="analogVoltage" placeholder="Enter voltage value" required>
                 </div>
             </div>
 
@@ -61,9 +61,11 @@
             </button>
         </form>
         {% if greeting %}
-        <div class="result">
-            {{ greeting }}
-        </div>
+            {%for x in greeting%}
+            <div class="result">
+                {{ greeting[x-1] }}
+            </div>
+            {% endfor %}
         {% endif %}
     </div>
 </body>

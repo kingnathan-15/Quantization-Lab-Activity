@@ -16,6 +16,13 @@ def Quantize(maxRange, minRange, sampleRate, bitRate, analogVoltage):
         index = 0
     elif index >= quantizationLevels:
         index = quantizationLevels - 1
-    
+   
     quantizedValue = minRange + index * quantizationStep
-    return quantizedValue
+    error = quantizedValue - sampleRate
+    minRange = quantizedValue - quantizationStep / 2
+    maxRange = quantizedValue + quantizationStep / 2
+
+    finalValues = [quantizedValue, error, minRange, maxRange]
+    return finalValues
+
+

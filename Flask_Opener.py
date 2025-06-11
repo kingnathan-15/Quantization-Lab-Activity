@@ -15,7 +15,9 @@ def set_work():
     bitRate = request.form.get('bitRate')
     analogVoltage = request.form.get('analogVoltage')  
     quantizedValue = Quantize(maxRate, minRate, sampleRate, bitRate, analogVoltage)
-    greeting = f"Quantized Value: {quantizedValue}"
+    greeting = [f"Quantized Value: {quantizedValue[0]}", 
+                f"Error Rate: {quantizedValue[1]}",
+                f"Voltage Range: {quantizedValue[2]} - {quantizedValue[3]}"]
     return render_template('Interface.html', greeting=greeting)
 
 if __name__ == '__main__':
